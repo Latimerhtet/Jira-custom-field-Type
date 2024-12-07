@@ -1,0 +1,30 @@
+modules:
+  jira:customFieldType:
+    - key: forge-currency-exchange-custom-field-type-ui-kit-2-hello-world
+      name: forge-currency-exchange
+      description: A hello world custom field.
+      type: string
+      render: native
+      resource: main
+      edit:
+        resource: edit
+        render: native
+        isInline: true
+      contextConfig:
+        resource: config
+        layout: basic
+        render: native
+      validation:
+        expression: value == null || !!value.match(configuration?.regex || "^[A-Za-z]+$")
+        errorMessage: The value is invalid
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+  - key: edit
+    path: src/frontend/edit.jsx
+  - key: config
+    path: src/frontend/context-config.jsx
+app:
+  runtime:
+    name: nodejs20.x
+  id: ari:cloud:ecosystem::app/87a1ab6b-97de-4b15-ac7b-ac296417e7a5
