@@ -1,22 +1,4 @@
-interface DefaultConfig {
-  tableHeaders: string[];
-  maxRowsAmounts: {
-    min: number;
-    max: number;
-  };
-  currencyPlaceholder: string;
-}
-
-interface DefaultContextConfig {
-  provision: number;
-  maxCurrencyCalculationRows: number;
-  currencyExchangeCourses: {
-    label: string;
-    exchangeValue: number;
-  }[];
-}
-
-export const DEFAULT_CONFIGURATION: DefaultConfig = {
+export const DEFAULT_CONFIGURATION = {
   tableHeaders: ["Amount", "Currency", "Delete row"],
   maxRowsAmounts: {
     min: 1,
@@ -25,7 +7,7 @@ export const DEFAULT_CONFIGURATION: DefaultConfig = {
   currencyPlaceholder: "Please provide cash amount",
 };
 
-export const DEFAULT_CONTEXT_CONFIG: DefaultContextConfig = {
+export const DEFAULT_CONTEXT_CONFIG = {
   provision: 0,
   maxCurrencyCalculationRows: 5,
   currencyExchangeCourses: [
